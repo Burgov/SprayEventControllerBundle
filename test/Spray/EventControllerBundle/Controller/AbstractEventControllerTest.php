@@ -1,6 +1,6 @@
 <?php
 
-namespace Spray\EventControllerBundle\Event;
+namespace Spray\EventControllerBundle\Controller;
 
 use PHPUnit_Framework_TestCase as TestCase;
 
