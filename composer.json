@@ -1,0 +1,12 @@
+{
+    "name": "jurjean/spray-event-controller-bundle",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "dev-master",
+        "symfony/event-dispatcher": "dev-master"
+    }
+}
