@@ -4,9 +4,17 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 use Spray\EventControllerBundle\Controller\AbstractEventController;
 use Spray\EventControllerBundle\Event\Event;
+use Spray\EventControllerBundle\EventListener\DoctrineListener;
 
 class MyController extends AbstractEventController
 {
+    public function __construct()
+    {
+        $this->getEventDispatcher()->addSubscriber(
+            new DoctrineListener($this->getDoctrine()->getEntityManager())
+        );
+    }
+    
     /**
      * @Template
      */
