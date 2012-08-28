@@ -2,6 +2,7 @@
 
 namespace Spray\EventControllerBundle\Event;
 
+use ArrayObject;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\EventDispatcher\Event as DispatcherEvent;
 use Symfony\Component\HttpFoundation\Request;
@@ -101,6 +102,9 @@ class Event extends DispatcherEvent
      */
     public function getViewData()
     {
+        if (null === $this->viewData) {
+            $this->setViewData(new ArrayObject());
+        }
         return $this->viewData;
     }
 }
