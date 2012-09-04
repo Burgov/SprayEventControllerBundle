@@ -4,6 +4,7 @@ namespace Spray\EventControllerBundle\Controller;
 
 use Spray\EventControllerBundle\Event\Event;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**
@@ -37,6 +38,17 @@ abstract class AbstractEventController extends Controller
             $this->setEventDispatcher(new EventDispatcher());
         }
         return $this->eventDispatcher;
+    }
+    
+    /**
+     * Dispatch an event when the container is injected
+     * 
+     * @param ContainerInterface $container
+     */
+    public function setContainer(ContainerInterface $container = null)
+    {
+        parent::setContainer($container);
+        $this->dispatch(Event::CONTAINER_INJECT, new Event());
     }
     
     /**

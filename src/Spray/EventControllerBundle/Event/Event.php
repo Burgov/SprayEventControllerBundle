@@ -15,10 +15,11 @@ class Event extends DispatcherEvent
     /**
      * Constants define available events
      */
-    const INDEX = 'index';
-    const CREATE = 'create';
-    const UPDATE = 'update';
-    const DELETE = 'delete';
+    const CONTAINER_INJECT = 'container.inject';
+    const INDEX            = 'action.index';
+    const CREATE           = 'action.create';
+    const UPDATE           = 'action.update';
+    const DELETE           = 'action.delete';
     
     /**
      * @var Controller
